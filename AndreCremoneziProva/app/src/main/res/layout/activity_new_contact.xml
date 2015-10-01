@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:id="@+id/cv"
+        android:gravity="center"
+        card_view:cardCornerRadius="10dp">
+
+
+    <RelativeLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:hint="@string/label_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextTelephone"
+        android:hint="@string/label_telephone"
+        android:layout_below="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:hint="@string/label_email"
+        android:layout_below="@+id/editTextTelephone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextSocialNetwork"
+        android:hint="@string/label_socialNetwork"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextZipCode"
+        android:hint="@string/label_zipCode"
+        android:layout_below="@+id/editTextSocialNetwork"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:text="@string/label_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/colorPrimary"
+        android:layout_toRightOf="@+id/editTextZipCode"
+        android:layout_toEndOf="@+id/editTextZipCode"
+        android:layout_below="@+id/editTextSocialNetwork"
+        android:layout_alignBottom="@+id/editTextZipCode" />
+
+
+    <EditText
+        android:id="@+id/editTextCity"
+        android:hint="@string/label_city"
+        android:layout_below="@+id/buttonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextState"
+        android:hint="@string/label_state"
+        android:layout_below="@+id/editTextCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextType"
+        android:hint="@string/label_type"
+        android:layout_below="@+id/editTextState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextStreet"
+        android:hint="@string/label_street"
+        android:layout_below="@+id/editTextType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/editTextNeighborhood"
+        android:hint="@string/label_neighborhood"
+        android:layout_below="@+id/editTextStreet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:text="@string/label_save"
+        android:background="?attr/colorPrimary"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/editTextNeighborhood"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+</RelativeLayout>

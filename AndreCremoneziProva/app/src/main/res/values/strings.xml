@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Contacts</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="label_name">Name</string>
+    <string name="label_telephone">Telephone</string>
+    <string name="label_email">Email</string>
+    <string name="label_socialNetwork">Social network</string>
+    <string name="label_city">City</string>
+    <string name="label_search">Search</string>
+    <string name="label_zipCode">Zip Code</string>
+    <string name="label_state">State</string>
+    <string name="label_type">Type</string>
+    <string name="label_street">Street</string>
+    <string name="label_neighborhood">Neighborhood</string>
+    <string name="label_save">Save</string>
+    <string name="msg_field_required">Field required</string>
+    <string name="msg_contact_create_sucess">Contact create sucess!</string>
+</resources>
