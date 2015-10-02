@@ -3,24 +3,22 @@ package avaliacao_pratica_andrecremonezi.andrecremoneziprova.model.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Administrador on 01/10/2015.
- */
 public class Telephone implements Parcelable{
-    private Contact contact;
     private Long    id;
     private String  number;
+    private Contact contact;
+
 
     public Telephone() {
         super();
     }
 
-    public Contact getContact() {
-        return contact;
+    public Long getIdcontact() {
+        return contact.getId();
     }
 
-    public void setContact(Contact contact) {
-        this.contact = contact;
+    public void setIdcontact(Long idcontact) {
+        this.contact.setId(idcontact);
     }
 
     public Long getId() {
@@ -39,6 +37,14 @@ public class Telephone implements Parcelable{
         this.number = number;
     }
 
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,23 +52,24 @@ public class Telephone implements Parcelable{
 
         Telephone telephone = (Telephone) o;
 
-        if (!contact.equals(telephone.contact)) return false;
         if (!id.equals(telephone.id)) return false;
-        return number.equals(telephone.number);
+        if (!number.equals(telephone.number)) return false;
+        return contact.equals(telephone.contact);
 
     }
 
     @Override
     public int hashCode() {
-        int result = contact.hashCode();
-        result = 31 * result + id.hashCode();
+        int result = id.hashCode();
         result = 31 * result + number.hashCode();
+        result = 31 * result + contact.hashCode();
         return result;
     }
 
     protected Telephone(Parcel in) {
-        contact = in.readParcelable(Contact.class.getClassLoader());
-        number = in.readString();
+        this.id = (Long) in.readValue(Integer.class.getClassLoader());
+        this.number = in.readString();
+        this.contact = in.readParcelable(Contact.class.getClassLoader());
     }
 
     public static final Creator<Telephone> CREATOR = new Creator<Telephone>() {
@@ -84,7 +91,9 @@ public class Telephone implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(contact, flags);
-        dest.writeString(number);
+        dest.writeValue(this.id);
+        dest.writeString(this.number);
+        dest.writeParcelable(this.contact, flags);
     }
+
 }

@@ -3,25 +3,13 @@ package avaliacao_pratica_andrecremonezi.andrecremoneziprova.model.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Administrador on 01/10/2015.
- */
 public class Email implements Parcelable{
-    private Contact contact;
     private Long    id;
     private String  emailAddress;
+    private Contact contact;
 
+    public Email(){
 
-    public Email() {
-        super();
-    }
-
-    public Contact getContact() {
-        return contact;
-    }
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
     }
 
     public Long getId() {
@@ -36,8 +24,24 @@ public class Email implements Parcelable{
         return emailAddress;
     }
 
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public Long getIdcontact() {
+        return contact.getId();
+    }
+
+    public void setIdcontact(Long idcontact) {
+        this.contact.setId(idcontact);
     }
 
     @Override
@@ -47,32 +51,25 @@ public class Email implements Parcelable{
 
         Email email = (Email) o;
 
-        if (!contact.equals(email.contact)) return false;
         if (!id.equals(email.id)) return false;
-        return emailAddress.equals(email.emailAddress);
+        if (!emailAddress.equals(email.emailAddress)) return false;
+        return contact.equals(email.contact);
 
     }
 
     @Override
     public int hashCode() {
-        int result = contact.hashCode();
-        result = 31 * result + id.hashCode();
+        int result = id.hashCode();
         result = 31 * result + emailAddress.hashCode();
+        result = 31 * result + contact.hashCode();
         return result;
     }
 
-    @Override
-    public String toString() {
-        return "Email{" +
-                "contact=" + contact +
-                ", id=" + id +
-                ", emailAddress='" + emailAddress + '\'' +
-                '}';
-    }
-
     protected Email(Parcel in) {
-        contact = in.readParcelable(Contact.class.getClassLoader());
+        this.id = (Long) in.readValue(Integer.class.getClassLoader());
         emailAddress = in.readString();
+        this.contact = in.readParcelable(Contact.class.getClassLoader());
+
     }
 
     public static final Creator<Email> CREATOR = new Creator<Email>() {
@@ -94,7 +91,9 @@ public class Email implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
         dest.writeParcelable(contact, flags);
         dest.writeString(emailAddress);
     }
+
 }

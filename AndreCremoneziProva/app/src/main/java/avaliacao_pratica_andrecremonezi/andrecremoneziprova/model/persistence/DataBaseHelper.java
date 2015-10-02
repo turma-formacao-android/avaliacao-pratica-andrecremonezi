@@ -28,7 +28,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
+        Log.e("Prova", "Create Tabela Contact");
+        db.execSQL(ContactContract.getCreateTableScript());
 
+        Log.e("Task Manager", "Create Tabela Email");
+        db.execSQL(EmailContract.getCreateTableScript());
+
+        Log.e("Task Manager", "Create Tabela Social Network");
+        db.execSQL(SocialNetworkContract.getCreateTableScript());
+
+        Log.e("Task Manager", "Create Tabela Social Telephone");
+        db.execSQL(TelephoneContract.getCreateTableScript());
 
     }
 

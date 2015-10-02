@@ -3,19 +3,19 @@ package avaliacao_pratica_andrecremonezi.andrecremoneziprova.model.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Administrador on 01/10/2015.
- */
 public class SocialNetwork implements Parcelable{
-    private Contact contact;
     private Long    id;
-    private String  name;
-    private String  userName;
+    private String  link;
+    private Contact contact;
+
+    public SocialNetwork() {
+        super();
+    }
 
     protected SocialNetwork(Parcel in) {
-        contact = in.readParcelable(Contact.class.getClassLoader());
-        name = in.readString();
-        userName = in.readString();
+        this.id = (Long) in.readValue(Integer.class.getClassLoader());
+        link = in.readString();
+        this.contact = in.readParcelable(Contact.class.getClassLoader());
     }
 
     public Contact getContact() {
@@ -26,6 +26,14 @@ public class SocialNetwork implements Parcelable{
         this.contact = contact;
     }
 
+    public Long getIdcontact() {
+        return contact.getId();
+    }
+
+    public void setIdcontact(Long idcontact) {
+        this.contact.setId(idcontact);
+    }
+
     public Long getId() {
         return id;
     }
@@ -34,21 +42,14 @@ public class SocialNetwork implements Parcelable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLink() {
+        return link;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -57,19 +58,17 @@ public class SocialNetwork implements Parcelable{
 
         SocialNetwork that = (SocialNetwork) o;
 
-        if (!contact.equals(that.contact)) return false;
         if (!id.equals(that.id)) return false;
-        if (!name.equals(that.name)) return false;
-        return userName.equals(that.userName);
+        if (!link.equals(that.link)) return false;
+        return contact.equals(that.contact);
 
     }
 
     @Override
     public int hashCode() {
-        int result = contact.hashCode();
-        result = 31 * result + id.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + userName.hashCode();
+        int result = id.hashCode();
+        result = 31 * result + link.hashCode();
+        result = 31 * result + contact.hashCode();
         return result;
     }
 
@@ -92,8 +91,8 @@ public class SocialNetwork implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(contact, flags);
-        dest.writeString(name);
-        dest.writeString(userName);
+        dest.writeValue(this.id);
+        dest.writeString(link);
+        dest.writeParcelable(this.contact, flags);
     }
 }

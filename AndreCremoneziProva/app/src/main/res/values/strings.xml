@@ -17,4 +17,15 @@
     <string name="label_save">Save</string>
     <string name="msg_field_required">Field required</string>
     <string name="msg_contact_create_sucess">Contact create sucess!</string>
+    <string name="label_add">Add</string>
+    <string name="msg_email_add">Email add !</string>
+    <string name="msg_telefone_add">Telephone add !</string>
+    <string name="msg_social_add">Social add !</string>
+    <string name="lbl_menu_edit">Edit</string>
+    <string name="lbl_menu_delete">Delete</string>
+    <string name="lbl_confirm">Confirm</string>
+    <string name="msg_confirm_delete">Delete</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="msg_delete_sucessfull">Delete sucess</string>
+    <string name="lbl_no">No</string>
 </resources>
