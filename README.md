@@ -1,7 +1,7 @@
-@@@ AVALIAÇÂO @@@
+AVALIAÇÂO
 
 
-@ Activitys:
+Activitys:
 
 1. Listagem dos itens.
 
@@ -16,7 +16,7 @@ O usuário ao inserir um cep, tinha a opção de clicar no botão de procurar, a
 
 O usuário ao clicar em salvar(CONTATO). O sistema salva o contato no banco de dados(pegando os atributos da classe contato e os atributos da classe address(webservice), após adicionar o contato no banco de dados, era retornado o ID do contato, com este ID, o sistema adicionava no banco, os objetos contidos nas listas(Emails, telefones e redes sociais), com o respectivo ID.
 
-@ Tabelas do BD
+Tabelas do BD
 
 Contato: 
 
@@ -35,7 +35,7 @@ Rede social:
 Contem o ID, link e o ID do contato.
 
 
-@ Observações
+Observações
 
 Utilizei algumas técnicas do Material Design, porém não deu tempo de fazer tudo.
 
