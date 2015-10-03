@@ -37,6 +37,8 @@ Contem o ID, link e o ID do contato.
 
 @ Observações
 
+Utilizei algumas técnicas do Material Design, porém não deu tempo de fazer tudo.
+
 1. CRUD funcionando perfeitamente.
 2. WEBSERVICE funcionando perfeitamente.
 3. ADD de contato, com mais de um email, telefone ou rede social, está funcionando perfeitamente.
