@@ -38,6 +38,7 @@ Contem o ID, link e o ID do contato.
 Observações
 
 Utilizei algumas técnicas do Material Design, porém não deu tempo de fazer tudo.
+Utilizei aSync.
 
 1. CRUD funcionando perfeitamente.
 2. WEBSERVICE funcionando perfeitamente.
